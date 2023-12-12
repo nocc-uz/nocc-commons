@@ -1,4 +1,4 @@
-package uz.kyuu.backend.base;
+package uz.nocc.commons.base;
 
 public interface BaseController {
 }

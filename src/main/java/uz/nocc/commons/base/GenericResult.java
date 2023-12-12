@@ -1,4 +1,4 @@
-package uz.kyuu.backend.base;
+package uz.nocc.commons.base;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

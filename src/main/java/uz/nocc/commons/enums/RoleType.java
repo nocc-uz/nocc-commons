@@ -1,4 +1,4 @@
-package uz.kyuu.backend.enums;
+package uz.nocc.commons.enums;
 
 /**
  * @author Jonibek Amirkulov (thejwa)

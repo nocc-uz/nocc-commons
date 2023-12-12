@@ -1,4 +1,4 @@
-package uz.kyuu.backend.util;
+package uz.nocc.commons.util;
 
 import org.springframework.stereotype.Component;
 

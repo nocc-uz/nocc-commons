@@ -1,4 +1,4 @@
-package uz.kyuu.backend.config;
+package uz.nocc.commons.config;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.web.error.ErrorAttributeOptions;
