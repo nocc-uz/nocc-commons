@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.http.ResponseEntity;
 
+import java.util.UUID;
+
 @Getter
 @Setter
 public class GenericResponse<T> {
@@ -15,69 +17,55 @@ public class GenericResponse<T> {
     @JsonProperty("result")
     private GenericResult<T> result;
 
-    public GenericResponse(Boolean success, Integer code) {
+    public GenericResponse(Boolean success, Integer code, UUID audit, String message, T data) {
         this.success = success;
         this.result = new GenericResult<>(
                 code,
-                this.success ? "Success" : "Unknown Error",
-                GlobalVar.getRequestId(),
-                null
-        );
-    }
-
-    public GenericResponse(Boolean success, Integer code, String message) {
-        this.success = success;
-        this.result = new GenericResult<>(
-                code,
+                audit,
                 message,
-                GlobalVar.getRequestId(),
-                null
-        );
-    }
-
-    public GenericResponse(Boolean success, Integer code, String message, T data) {
-        this.success = success;
-        this.result = new GenericResult<>(
-                code,
-                message,
-                GlobalVar.getRequestId(),
                 data
         );
     }
 
-    public static <T> ResponseEntity<GenericResponse<T>> success(Integer code) {
+    public static <T> ResponseEntity<GenericResponse<T>> success(UUID audit, T data) {
         return ResponseEntity.ok(
-                new GenericResponse<>(Boolean.TRUE, code)
+                new GenericResponse<>(Boolean.TRUE, 40000, audit, "Success", data)
         );
     }
 
-    public static <T> ResponseEntity<GenericResponse<T>> success(Integer code, String message) {
+    public static <T> ResponseEntity<GenericResponse<T>> success(Integer code, UUID audit) {
         return ResponseEntity.ok(
-                new GenericResponse<>(Boolean.TRUE, code, message)
+                new GenericResponse<>(Boolean.TRUE, code, audit, "Success", null)
         );
     }
 
-    public static <T> ResponseEntity<GenericResponse<T>> success(Integer code, String message, T data) {
+    public static <T> ResponseEntity<GenericResponse<T>> success(Integer code, UUID audit, String message) {
         return ResponseEntity.ok(
-                new GenericResponse<>(Boolean.TRUE, code, message, data)
+                new GenericResponse<>(Boolean.TRUE, code, audit, message, null)
         );
     }
 
-    public static <T> ResponseEntity<GenericResponse<T>> error(Integer code) {
+    public static <T> ResponseEntity<GenericResponse<T>> success(Integer code, UUID audit, String message, T data) {
         return ResponseEntity.ok(
-                new GenericResponse<>(Boolean.FALSE, code)
+                new GenericResponse<>(Boolean.TRUE, code, audit, message, data)
         );
     }
 
-    public static <T> ResponseEntity<GenericResponse<T>> error(Integer code, String message) {
+    public static <T> ResponseEntity<GenericResponse<T>> error(Integer code, UUID audit) {
         return ResponseEntity.ok(
-                new GenericResponse<>(Boolean.FALSE, code, message)
+                new GenericResponse<>(Boolean.FALSE, code, audit, "Unknown Error", null)
         );
     }
 
-    public static <T> ResponseEntity<GenericResponse<T>> error(Integer code, String message, T data) {
+    public static <T> ResponseEntity<GenericResponse<T>> error(Integer code, UUID audit, String message) {
         return ResponseEntity.ok(
-                new GenericResponse<>(Boolean.FALSE, code, message, data)
+                new GenericResponse<>(Boolean.FALSE, code, audit, message, null)
+        );
+    }
+
+    public static <T> ResponseEntity<GenericResponse<T>> error(Integer code, UUID audit, String message, T data) {
+        return ResponseEntity.ok(
+                new GenericResponse<>(Boolean.FALSE, code, audit, message, data)
         );
     }
 }
