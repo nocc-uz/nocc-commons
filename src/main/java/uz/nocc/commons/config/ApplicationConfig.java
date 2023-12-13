@@ -49,12 +49,12 @@ public class ApplicationConfig {
 
                 Map<String, Object> responseEntity = new LinkedHashMap<>();
 
-                responseEntity.put("data", null);
-                if (Objects.isNull(message)) {
-                    responseEntity.put("errorMessage", error.substring(0, Math.min(22, error.length())));
-                } else {
-                    responseEntity.put("errorMassage", message);
-                }
+//                responseEntity.put("data", null);
+//                if (Objects.isNull(message)) {
+//                    responseEntity.put("errorMessage", error.substring(0, Math.min(22, error.length())));
+//                } else {
+//                    responseEntity.put("errorMassage", message);
+//                }
                 responseEntity.put("timestamp", timestamp);
                 return responseEntity;
             }
