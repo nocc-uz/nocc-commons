@@ -1,19 +1,14 @@
 <settings>
+
     <localRepository>/maven-repo</localRepository>
 
     <servers>
         <server>
-            <id>ossrh</id>
+            <id>${server}</id>
             <username>7XTfBpsN</username>
             <password>SS5oEc3D/VWzAnzT9GKHwY8oB0phSb6AkTaLRgoEKRxX</password>
         </server>
-<!--        <server>-->
-<!--            <id>ossrh</id>-->
-<!--            <username>7XTfBpsN</username>-->
-<!--            <password>SS5oEc3D/VWzAnzT9GKHwY8oB0phSb6AkTaLRgoEKRxX</password>-->
-<!--        </server>-->
     </servers>
-
 
     <profiles>
         <profile>
@@ -23,7 +18,7 @@
             </activation>
             <properties>
                 <gpg.executable>gpg2</gpg.executable>
-                <gpg.passphrase>passphrase</gpg.passphrase>
+                <gpg.passphrase>S313a00y800080</gpg.passphrase>
             </properties>
         </profile>
     </profiles>
