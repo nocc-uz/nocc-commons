@@ -1,23 +1,6 @@
 server:
   port: 20200
 
-spring:
-  # db config
-  datasource:
-    url: jdbc:postgresql://localhost:5432/kyuu_dev
-    username: postgres
-    password: ${DB_PASSWORD:root123}
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    show-sql: false
-    hibernate:
-      ddl-auto: create
-    open-in-view: true
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    properties:
-      hibernate:
-        format_sql: true
-
 # swagger config
 springdoc:
   swagger-ui:
@@ -30,11 +13,3 @@ springdoc:
     doc-expansion: "none"
   api-docs:
     path: /api/docs
-
-security:
-  jwt:
-    secret: alskdfjakldjf
-    # in minutes
-    access-expiry: 60
-    # in days
-    refresh-expiry: 365
