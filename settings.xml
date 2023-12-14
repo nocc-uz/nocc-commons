@@ -3,6 +3,11 @@
     <localRepository>/maven-repo</localRepository>
 
     <servers>
+<!--        <server>-->
+<!--            <id>ossrh</id>-->
+<!--            <username>murodullayev.saydali0080@gmail.com</username>-->
+<!--            <password>S313a00y800080</password>-->
+<!--        </server>-->
         <server>
             <id>${server}</id>
             <username>7XTfBpsN</username>
