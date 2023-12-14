@@ -3,16 +3,16 @@
     <localRepository>/maven-repo</localRepository>
 
     <servers>
-<!--        <server>-->
-<!--            <id>ossrh</id>-->
-<!--            <username>murodullayev.saydali0080@gmail.com</username>-->
-<!--            <password>S313a00y800080</password>-->
-<!--        </server>-->
         <server>
             <id>ossrh</id>
-            <username>7XTfBpsN</username>
-            <password>SS5oEc3D/VWzAnzT9GKHwY8oB0phSb6AkTaLRgoEKRxX</password>
+            <username>murodullayev.saydali0080@gmail.com</username>
+            <password>S313a00y800080</password>
         </server>
+<!--        <server>-->
+<!--            <id>ossrh</id>-->
+<!--            <username>7XTfBpsN</username>-->
+<!--            <password>SS5oEc3D/VWzAnzT9GKHwY8oB0phSb6AkTaLRgoEKRxX</password>-->
+<!--        </server>-->
     </servers>
 
     <profiles>
