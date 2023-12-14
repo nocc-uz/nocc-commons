@@ -9,7 +9,7 @@
 <!--            <password>S313a00y800080</password>-->
 <!--        </server>-->
         <server>
-            <id>${server}</id>
+            <id>ossrh</id>
             <username>7XTfBpsN</username>
             <password>SS5oEc3D/VWzAnzT9GKHwY8oB0phSb6AkTaLRgoEKRxX</password>
         </server>
